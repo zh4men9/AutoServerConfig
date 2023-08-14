@@ -22,10 +22,10 @@ if [ ! -f "cuda-ubuntu${ubuntu_version}04.pin" ]; then
 fi
 
 # 下载 CUDA 安装包
-cuda_package="cuda-repo-ubuntu${ubuntu_version}04-12-2-local_12.2.1-535.86.10-1_amd64.deb"
+cuda_package="cuda-repo-ubuntu${ubuntu_version}04-11-7-local_11.7.0-515.43.04-1_amd64.deb"
 if [ ! -f "$cuda_package" ]; then
     echo "下载 CUDA 安装包..."
-    wget "$cuda_repo/12.2.1/local_installers/$cuda_package"
+    wget "$cuda_repo/11.7.0/local_installers/$cuda_package"
 fi
 
 # 安装 CUDA 安装包
@@ -34,15 +34,16 @@ sudo dpkg -i "$cuda_package"
 
 # 复制密钥到 keyrings 目录
 echo "复制密钥到 keyrings 目录..."
-sudo cp /var/cuda-repo-ubuntu${ubuntu_version}04-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo cp /var/cuda-repo-ubuntu${ubuntu_version}04-11-7-local/cuda-*-keyring.gpg /usr/share/keyrings/
 
 # 更新软件源
 echo "更新软件源..."
 sudo apt-get update
 
 # # 安装cuda-drivers-535
-# sudo apt-get install nvidia-utils-535-server -y
-# sudo apt-get install cuda-drivers-535
+echo "安装cuda-drivers-535..."
+sudo apt install nvidia-driver-535 -y
+sudo apt install -y nvidia-utils-535-server
 
 # 安装 CUDA
 echo "安装 CUDA..."
@@ -50,8 +51,8 @@ sudo apt-get -y install cuda
 
 # 设置环境变量
 echo "设置环境变量..."
-echo "export PATH=/usr/local/cuda-12.2/bin:\$PATH" >> ~/.bashrc
-echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:\$LD_LIBRARY_PATH" >> ~/.bashrc
+echo "export PATH=/usr/local/cuda-11.7/bin:\$PATH" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:\$LD_LIBRARY_PATH" >> ~/.bashrc
 source ~/.bashrc
 
 echo "CUDA 环境变量设置完成。"
