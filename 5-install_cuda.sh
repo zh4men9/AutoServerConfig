@@ -72,3 +72,15 @@ nvcc --version
 nvidia-smi
 
 echo "CUDA 安装和验证完成。请重新启动终端以使环境生效。"
+
+read -p "需要重启生效，确定重启？ (y/n): " confirm
+
+if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
+    echo "操作已取消。"
+    exit 1
+fi
+
+# 重启系统
+echo "系统将在5秒后重启..."
+sleep 5
+sudo reboot
