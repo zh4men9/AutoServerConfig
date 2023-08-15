@@ -18,6 +18,8 @@ sudo bash -c "echo '$ip_address https://github.com' >> /etc/hosts"
 sudo bash -c "echo '$ip_address2 http://github.global.ssl.fastly.net' >> /etc/hosts"
 sudo bash -c "echo '$ip_address2 https://github.global.ssl.fastly.net' >> /etc/hosts"
 
+cat /etc/hosts
+
 # 重启网络服务
 sudo systemctl restart systemd-networkd
 

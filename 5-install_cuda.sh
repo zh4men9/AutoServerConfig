@@ -73,6 +73,16 @@ nvidia-smi
 
 echo "CUDA 安装和验证完成。请重新启动终端以使环境生效。"
 
+
+read -p "是否删除$cuda_package (y/n): " confirm
+
+if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
+    echo "操作已取消。"
+else
+    rm -rf $cuda_package
+fi
+
+
 read -p "需要重启生效，确定重启？ (y/n): " confirm
 
 if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
