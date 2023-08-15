@@ -25,7 +25,7 @@ fi
 cuda_package="cuda-repo-ubuntu${ubuntu_version}04-11-7-local_11.7.0-515.43.04-1_amd64.deb"
 if [ ! -f "$cuda_package" ]; then
     echo "下载 CUDA 安装包..."
-    wget "$cuda_repo/11.7.0/local_installers/$cuda_package"
+    wget "https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/$cuda_package"
 fi
 
 # 安装 CUDA 安装包
