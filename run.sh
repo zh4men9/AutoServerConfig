@@ -7,3 +7,5 @@ sh 6-change_pip_source.sh
 sh 7-set_alias.sh
 sh 8-accelerate_git.sh
 sh 9-install_fastgithub.sh
+sh 10-install_git_lfs.sh
+sh 11-install_docker.sh
