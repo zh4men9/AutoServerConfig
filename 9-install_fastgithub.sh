@@ -4,6 +4,7 @@ sudo rm -rf ./fastgithub_linux-x64
 
 unzip fastgithub_linux-x64.zip
 
+sudo chmod +x ./fastgithub_linux-x64/fastgithub
 sudo ./fastgithub_linux-x64/fastgithub start
 
 proxy_url="http://127.0.0.1:38457"
