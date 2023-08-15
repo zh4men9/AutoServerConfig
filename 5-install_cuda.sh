@@ -41,9 +41,13 @@ echo "更新软件源..."
 sudo apt-get update
 
 # # 安装cuda-drivers-535
+# 安装驱动的时候可能需要手动安装
 echo "安装cuda-drivers-535..."
+sudo apt install ubuntu-drivers-common -y
+ubuntu-drivers devices
 sudo apt install nvidia-driver-535 -y
 sudo apt install -y nvidia-utils-535-server
+sudo apt install libnvidia-compute-535-server
 
 # 安装 CUDA
 echo "安装 CUDA..."
@@ -57,6 +61,9 @@ echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:\$LD_LIBRARY_PATH" >> ~/
 source ~/.bashrc
 
 echo "CUDA 环境变量设置完成。"
+
+sudo apt-get install dkms
+sudo dkms install -m nvidia -v 515.43.04
 
 # 验证安装
 echo "验证 CUDA 安装..."
