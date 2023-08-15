@@ -1,2 +1,3 @@
 *.deb
 fastgithub_linux-x64
+*.log
