@@ -43,11 +43,12 @@ sudo apt-get update
 # # 安装cuda-drivers-535
 # 安装驱动的时候可能需要手动安装
 echo "安装cuda-drivers-535..."
-sudo apt install ubuntu-drivers-common -y
-ubuntu-drivers devices
-sudo apt install nvidia-driver-535 -y
-sudo apt install -y nvidia-utils-535-server
-sudo apt install libnvidia-compute-535-server
+# sudo apt install ubuntu-drivers-common -y
+# ubuntu-drivers devices
+# sudo apt install nvidia-driver-535 -y
+# sudo apt install -y nvidia-utils-535-server
+# sudo apt install libnvidia-compute-535-server
+# sudo ubuntu-drivers autoinstall
 
 # 安装 CUDA
 echo "安装 CUDA..."
