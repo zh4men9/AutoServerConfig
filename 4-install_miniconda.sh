@@ -3,16 +3,17 @@
 # 定义 Miniconda 版本和安装路径
 miniconda_version="latest"  # 或指定特定版本，如 "4.10.3"
 install_path="$HOME/miniconda"
+echo "install_path: $install_path"
 
 # 检查是否已安装 Miniconda
 if [ -d "$install_path" ]; then
     echo "Miniconda 已经安装在 $install_path。跳过安装阶段。"
 else
     # 下载 Miniconda 安装脚本
-    wget "https://repo.anaconda.com/miniconda/Miniconda3-$miniconda_version-Linux-x86_64.sh" -O miniconda_installer.sh
+    sudo wget "https://repo.anaconda.com/miniconda/Miniconda3-$miniconda_version-Linux-x86_64.sh" -O miniconda_installer.sh
 
     # 执行安装脚本
-    bash miniconda_installer.sh -b -p "$install_path"
+    sudo bash miniconda_installer.sh -b -p "$install_path"
 
     # 添加 Miniconda 到 PATH
     echo "export PATH=\"$install_path/bin:\$PATH\"" >> "$HOME/.bashrc"
