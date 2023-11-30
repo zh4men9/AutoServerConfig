@@ -1,12 +1,13 @@
 # AutoServerConfig
-配置服务器的脚本
+一键配置Linux服务器脚本，包含Miniconda安装、pip、apt换源、Ubuntu20.04以及Ubuntu22.04的cuda安装等功能。
 
 # 使用
-目前只支持Ubuntu 20.04和Ubuntu22.04
+针对cuda安装，目前只支持Ubuntu 20.04和Ubuntu22.04，使用其他操作系统，请谨慎使用！！！
 
 可以执行run.sh一键执行全部shell，或者根据自己选择执行脚本。脚本的名字具有自解释性。
 
 # 各个文件含义
+```shell
 ├── 0-change_host_name.sh # 更改主机名字
 ├── 10-install_git_lfs.sh # 安装git lfs
 ├── 11-install_docker.sh # 安装docker
@@ -25,7 +26,7 @@
 ├── README.md
 ├── run.sh # 可以修改shell文件内容，一键执行。注意，根据自己选择设置需要执行的脚步，最好是按照需要手动执行某个shell脚本
 └── uninstall_cuda.sh # 卸载cuda
-
+```
 
 # 参考
 
